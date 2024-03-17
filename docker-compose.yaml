@@ -1,0 +1,66 @@
+version: "3.8"
+services:
+  frontend:
+    build: frontend
+    ports:
+      - "4000:4000"
+    environment:
+      KEYCLOAK_CLIENT_ID: "dashboard"
+      KEYCLOAK_CLIENT_SECRET: "cwrCP1uLwxo2IZSFewg1BTf3BgiUsZQp"
+      KEYCLOAK_ISSUER: "http://keycloak:8080/realms/optiop-dashboard"
+      NEXTAUTH_URL: "http://localhost:4000/"
+      NEXTAUTH_SECRET: "2FHgzG8vd0NNpfP+JmOLL3eKx/h+e0q3K8Q2fskNRgk="
+      # Add `127.0.0.1 keycloak` to /etc/hosts
+
+  postgres:
+    image: docker.io/postgres:15
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: passw0rd
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+  
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0
+    command: start-dev --import-realm
+    environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_PORT: '5432'
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: passw0rd
+      KC_HOSTNAME: localhost
+      KC_FEATURES: preview
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak/certs:/opt/keycloak/certs
+      - ./keycloak/dashboard-realm.json:/opt/keycloak/data/import/dashboard-realm.json
+
+  mail:
+    image: docker.io/axllent/mailpit:latest
+    ports:
+      - "8025:8025"
+  
+  postgres-data:
+    build: ./postgres-data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
+      - ./grafana/provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
+    environment:
+      - GF_PATH_PROVISIONING=/etc/grafana/provisioning
+    ports:
+      - 3000:3000 

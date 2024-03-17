@@ -1,0 +1,127 @@
+{
+  "id" : "optiop-dashboard",
+  "realm" : "optiop-dashboard",
+  "displayName" : "Optiop Consulting Group",
+  "enabled" : true,
+  "registrationAllowed" : true,
+  "rememberMe" : true,
+  "resetPasswordAllowed" : true,
+  "roles" : {
+    "realm" : [ {
+      "id" : "b7ad0048-fb8c-45c0-89d6-821843bf1a53",
+      "name" : "serviceAccount",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "optiop-dashboard",
+      "attributes" : { }
+    }, {
+      "id" : "4ba9446c-7fb4-4678-87c0-b5fba1bd30c7",
+      "name" : "user",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "optiop-dashboard",
+      "attributes" : { }
+    }, {
+      "id" : "9f9d5481-a26a-4017-b106-0efbd7025c99",
+      "name" : "admin",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "optiop-dashboard",
+      "attributes" : { }
+    }, {
+      "id" : "584081fd-a041-4527-8a24-8be55bfcd1a1",
+      "name" : "unicorn",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "optiop-dashboard",
+      "attributes" : { }
+    } ]
+  },
+  "clients" : [ 
+    {
+      "id": "5fcb0ba8-031c-451a-b108-055efa1ce20e" ,
+      "clientId": "dashboard",
+      "name": "Retailer User",
+      "description": "Use to allow access for client to Grafana and Dashboard",
+      "rootUrl": "http://localhost:4000",
+      "adminUrl": "http://localhost:4000",
+      "baseUrl": "http://localhost:4000",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "cwrCP1uLwxo2IZSFewg1BTf3BgiUsZQp",
+      "redirectUris": [
+        "http://localhost:4000/api/auth/callback/keycloak"
+      ],
+      "webOrigins": [
+        "/*"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "oidc.ciba.grant.enabled": "false",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "client.secret.creation.time": "1709493045",
+        "backchannel.logout.session.required": "true",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "web-origins",
+        "acr",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ],
+      "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+      }
+    }
+  ],
+  "users": [ {
+    "id": "bffb22c5-f548-49f2-b969-477a45fbcee9",
+    "createdTimestamp": 1621071095966,
+    "username": "service-account-dashboard",
+    "enabled": true,
+    "totp": false,
+    "emailVerified": false,
+    "serviceAccountClientId": "dashboard",
+    "disableableCredentialTypes": [],
+    "requiredActions": [],
+    "realmRoles": [
+      "serviceAccount"
+    ],
+    "notBefore": 0,
+    "groups": []
+  } ],
+  "smtpServer" : {
+    "starttls" : "",
+    "auth" : "",
+    "port" : "1025",
+    "host" : "mail",
+    "from" : "bookshop@keycloak.local",
+    "ssl" : ""
+  },
+  "attributes" : {
+    "acr.loa.map" : "{\"bronze\":\"0\",\"silver\":\"1\",\"gold\":\"2\"}"
+  }
+}

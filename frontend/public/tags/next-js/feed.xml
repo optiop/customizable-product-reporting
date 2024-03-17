@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Optiop Blog</title>
+      <link>https://optiop.org/blog</link>
+      <description>A blog to discuss the latest trends in operations and infrastructure management.</description>
+      <language>en-us</language>
+      <managingEditor>contact@optiop.org (Optiop Consulting Group)</managingEditor>
+      <webMaster>contact@optiop.org (Optiop Consulting Group)</webMaster>
+      <lastBuildDate>Sat, 05 Aug 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://optiop.org/tags/next-js/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://optiop.org/blog/content/release-of-tailwind-nextjs-starter-blog-v2.0</guid>
+    <title>Release of Tailwind Nextjs Starter Blog v2.0</title>
+    <link>https://optiop.org/blog/content/release-of-tailwind-nextjs-starter-blog-v2.0</link>
+    <description>Release of Tailwind Nextjs Starter Blog template v2.0, refactored with Nextjs App directory and React Server Components setup.Discover the new features and how to migrate from V1.</description>
+    <pubDate>Sat, 05 Aug 2023 00:00:00 GMT</pubDate>
+    <author>contact@optiop.org (Optiop Consulting Group)</author>
+    <category>next-js</category><category>tailwind</category><category>guide</category><category>feature</category>
+  </item>
+
+    </channel>
+  </rss>
