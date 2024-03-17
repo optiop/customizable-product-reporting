@@ -24,9 +24,37 @@
 ](https://discord.gg/WkA4PM2dna)
 [
   ![Blog](https://img.shields.io/badge/blog-optiop-blue)
-](https://optiop.org/blog/content/visualize-postgres-data-using-grafana-ecs/index.html)
+](https://optiop.org/blog/content/customizable-product-repority-with-grafana/)
 [
   ![license](https://img.shields.io/github/license/optiop/postgres-grafana-on-ecs)
 ](./LICENSE)
 
 </div>
+
+## Introduction
+This repository contains the code and explanation for deploying a customizable product reporting solution 
+using Grafana and PostgreSql. The solution is a proof of concept for a real-world use case where a company
+wants to provide a customizable reporting solution to its customers.
+
+
+## Usage
+The repository contains a `docker-compose` file that can be used to start the solution locally.
+```bash
+docker-compose up
+```
+
+## Services
+The solution consists of the following services:
+
+| Service | Description | URL |
+| --- | --- | --- |
+| Grafana | The reporting dashboard | [http://localhost:3000](http://localhost:3000) |
+| Keycloak | The identity and access management | [http://localhost:8080](http://localhost:8080) |
+| Frontend | The frontend application | [http://localhost:4000](http://localhost:4000) |
+
+## References
+- [Optiop](https://optiop.org)
+- [Blog](https://optiop.org/blog/content/customizable-product-repority-with-grafana/)
+- [Discord](https://discord.gg/WkA4PM2dna)
+- [Grafana](https://grafana.com)
+- [Keycloak](https://www.keycloak.org)
