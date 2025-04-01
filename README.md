@@ -20,9 +20,6 @@
   <br>
 
 [
-  ![Discord](https://img.shields.io/discord/1216332587778179072)
-](https://discord.gg/WkA4PM2dna)
-[
   ![Blog](https://img.shields.io/badge/blog-optiop-blue)
 ](https://optiop.org/blog/content/customizable-product-repority-with-grafana/)
 [
